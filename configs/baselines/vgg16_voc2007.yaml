@@ -10,8 +10,8 @@ SOLVER:
   BASE_LR: 0.001
   GAMMA: 0.1
   # 1x schedule (note TRAIN.IMS_PER_BATCH: 1)
-  MAX_ITER: 50000
-  STEPS: [0, 35000]
+  MAX_ITER: 75000
+  STEPS: [0, 55000]
 FAST_RCNN:
   ROI_BOX_HEAD: vgg16.roi_2mlp_head
   ROI_XFORM_METHOD: RoIPoolF
