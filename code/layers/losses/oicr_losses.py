@@ -12,7 +12,7 @@ class OICRLosses(nn.Module):
 
         
         cls_loss_weights = cls_loss_weights.repeat(pcl_probs.shape[1],1).permute(1,0).cuda()
-
+        cls_loss_weights = cls_loss_weights * torch.exp(cls_loss_weights)
 
         labels = labels.repeat(pcl_probs.shape[1],1).permute(1,0).long()
         reap   = torch.arange(pcl_probs.shape[1])[None,:].repeat(pcl_probs.shape[0], 1).long()
